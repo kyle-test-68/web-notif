@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper light-blue">
+                <a href="/" class="brand-logo">Web Notification</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container" style="margin-top: 40px;">
+        <button id="get" class="btn">Get List</button>
+    </div>
+    <p id="lists"></p>
+    <script text="text/javascript">
+        const listButton = document.querySelector('#get');
+        const p = document.querySelector('#lists');
+
+        listButton.addEventListener('click', function () {
+            fetch('/database/view', {
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json"
+                }
+            })
+
+
+        });
+
+    </script>
+    <script src="" async defer></script>
+</body>
+
+</html>
