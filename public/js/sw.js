@@ -30,8 +30,8 @@ self.addEventListener('push', function(event) {
       primaryKey: '2'
     },
     actions: [
-      {action: 'explore', title: 'Explore this new world',icon: 'check.png'},
-      {action: 'close', title: 'Close', icon: 'x.png'},
+      {action: 'explore', title: 'Explore this new world',icon: '../images/icons/check.png'},
+      {action: 'close', title: 'Close', icon: '../images/icons/x.png'},
     ]
 
   };
