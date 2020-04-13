@@ -30,9 +30,10 @@ self.addEventListener('push', function(event) {
       primaryKey: '2'
     },
     actions: [
-      {action: 'explore', title: 'Explore this new world'},
-      {action: 'close', title: 'Close'},
+      {action: 'explore', title: 'Explore this new world',icon: 'check.png'},
+      {action: 'close', title: 'Close', icon: 'x.png'},
     ]
+
   };
 
   event.waitUntil(self.registration.showNotification(title, options));
