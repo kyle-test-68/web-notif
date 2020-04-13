@@ -22,9 +22,17 @@ self.addEventListener('push', function(event) {
   //console.log(data.title);
   const title = data.title;
   const options = {
-    body: data.message
-    // icon: 'images/icon.png',
-    // badge: 'images/badge.png'
+    body: data.message,
+    icon: '../images/icons/icon-128x128.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: '2'
+    },
+    actions: [
+      {action: 'explore', title: 'Explore this new world'},
+      {action: 'close', title: 'Close'},
+    ]
   };
 
   event.waitUntil(self.registration.showNotification(title, options));
