@@ -43,10 +43,27 @@ self.addEventListener('notificationclick', function(event) {
   console.log('[Service Worker] Notification click Received.');
 
   event.notification.close();
+  if (!event.action) {
+    // Was a normal notification click
+    console.log('Notification Click.');
+    return;
+  }
 
-  event.waitUntil(
-    clients.openWindow('https://developers.google.com/web/')
-  );
+  switch (event.action) {
+    case 'explore':
+      event.waitUntil(
+        clients.openWindow('https://developers.google.com/web/')
+      );
+      break;
+    case 'close':
+      console.log('Closing');
+      break;
+    default:
+      console.log(`Unknown action clicked: '${event.action}'`);
+      break;
+  }
+
+
 });
 
 self.addEventListener('pushsubscriptionchange', function(event) {
