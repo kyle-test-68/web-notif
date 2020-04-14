@@ -30,8 +30,8 @@ self.addEventListener('push', function(event) {
       primaryKey: '2'
     },
     actions: [
-      {action: 'explore', title: 'Explore this new world',icon: '../images/icons/check.png'},
-      {action: 'close', title: 'Close', icon: '../images/icons/x.png'},
+      {action: 'explore', title: 'Explore this new world'},
+      {action: 'close', title: 'Close'},
     ]
 
   };
@@ -62,7 +62,6 @@ self.addEventListener('notificationclick', function(event) {
       console.log(`Unknown action clicked: '${event.action}'`);
       break;
   }
-
 
 });
 
