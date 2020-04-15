@@ -24,6 +24,7 @@ self.addEventListener('push', function(event) {
   const options = {
     body: data.message,
     icon: '../images/icons/icon-128x128.png',
+    image: '../images/sky.jpg',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
